@@ -2,7 +2,7 @@ const themes = {
   light: {
     colors: {
       primary: '#6200ee',
-      background: '#ffffff',
+      background: '#ffff',
       card: '#ffffff',
       text: '#000000',
       border: '#ffffff',
@@ -12,7 +12,7 @@ const themes = {
   dark: {
     colors: {
       primary: '#bb86fc',
-      background: '#121212',
+      background: 'radial-gradient(rgba(255, 255, 255, 0.04) 1px, #161616 1px), radial-gradient(rgba(255, 255, 255, 1) 1px, #161616 1px);',
       card: '#1e1e1e',
       text: '#ffffff',
       border: '#ffffff',

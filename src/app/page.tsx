@@ -6,7 +6,7 @@ import useDarkMode from 'use-dark-mode';
 import { ThemeToggleContext } from '@/contexts';
 import { themes } from '@/themes';
 
-import { Header } from '../components';
+import { Header, Skills } from '../components';
 
 export default function Home() {
   const darkMode = useDarkMode(true);
@@ -28,6 +28,7 @@ export default function Home() {
           }}
         >
           <Header />
+          <Skills />
         </ThemeToggleContext.Provider>
       )}
     </ThemeProvider>

@@ -3,6 +3,9 @@ export interface ITheme {
     colors: {
       primary?: string;
       background?: string;
+      backgroundPosition?: string;
+      backgroundSize?: string;
+      backgroundAttachment?: string;
       card?: string;
       text?: string;
       border?: string;
