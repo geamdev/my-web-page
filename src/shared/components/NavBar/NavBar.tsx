@@ -6,7 +6,7 @@ import { FaBarsStaggered } from 'react-icons/fa6';
 
 const links = ['About Me', 'Skills', 'Projects', 'Contact'];
 
-const Nav: React.FC = () => {
+const NavBar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
     if (
@@ -42,9 +42,9 @@ const Nav: React.FC = () => {
   };
 
   return (
-    <>
+    <header>
       {isMobile ? (
-        <nav className='w-full  dark:bg-[#1c1d25] dark:text-white'>
+        <nav className='w-full'>
           <div className='flex justify-between w-full p-4 text-2xl'>
             <button onClick={handleChangeTheme}>
               {theme === 'dark' ? <FaMoon /> : <FaSun />}
@@ -68,11 +68,11 @@ const Nav: React.FC = () => {
           )}
         </nav>
       ) : (
-        <nav className='flex justify-between items-center p-4 cursor-pointer dark:bg-[#1c1d25] dark:text-white text-lg'>
+        <nav className='flex justify-between items-center p-4 cursor-pointer text-lg'>
           <ul className='flex justify-center items-center list-none gap-2'>
             <li className='flex gap-2'>
               <button onClick={handleChangeTheme}>
-                {theme ? <FaMoon /> : <FaSun />}
+                {theme === 'dark' ? <FaMoon /> : <FaSun />}
               </button>
             </li>
           </ul>
@@ -90,8 +90,8 @@ const Nav: React.FC = () => {
           </ul>
         </nav>
       )}
-    </>
+    </header>
   );
 };
 
-export default Nav;
+export default NavBar;

@@ -1,6 +1,6 @@
 const Skills: React.FC = () => {
   return (
-    <section>
+    <section className='bg-white'>
       <div>
         <h1>skills</h1>
       </div>

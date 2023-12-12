@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  position: relative;
+}
+
 .tw-button {
   @apply bg-blue-500 text-white p-3 rounded-md w-full hover:bg-blue-600;
 }
@@ -17,14 +21,7 @@
 .bg-primary {
   background-color: #f3f3f3;
 }
-.bg-dark {
-  background-color: radial-gradient(rgba(255, 255, 255, 0.04) 1px, #1c1d25 1px),
-    radial-gradient(rgba(255, 255, 255, 1) 1px, #222222 1px);
-}
 
-* {
-  position: relative;
-}
 .li {
   text-align: center;
 }
@@ -37,7 +34,7 @@
 
 .li > a:before {
   @apply bg-[#7fdbff] dark:bg-[#7fdb];
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   height: 5px;
@@ -54,6 +51,35 @@
   animation: 0.5s forwards hover-v linear;
   animation-fill-mode: forwards;
 }
+
+.fadeIn {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.slideIn {
+  animation: slideIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 @keyframes hover-v {
   0% {
     transform: scaleX(0);
