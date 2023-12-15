@@ -6,6 +6,7 @@ import { Logo } from '@/assets';
 import clsx from 'clsx';
 import { useContactAbout } from '@/shared/contexts/ContactAboutContext';
 import { LazyMotion, domAnimation, m } from 'framer-motion';
+import { Button } from '@/shared/components';
 
 const Header = () => {
   const { isMobile, isTablet, isDesktop } = useResponsive();
@@ -63,7 +64,7 @@ const Header = () => {
               )}
             </div>
 
-            <button
+            <Button
               className='relative px-4 py-2 text-lg text-white bg-[#4c4f65] z-10'
               onClick={onMenuClick}
             >
@@ -76,7 +77,7 @@ const Header = () => {
                   animate='animate'
                 />
               )}
-            </button>
+            </Button>
           </div>
           {!isMobile && (
             <div

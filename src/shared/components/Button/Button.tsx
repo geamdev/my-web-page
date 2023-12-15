@@ -1,8 +1,10 @@
 import clsx from 'clsx';
 
+import { Loader } from './components';
+
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  variant?: 'primary' | 'outline';
+  variant?: 'primary';
   fullWidth?: boolean;
   loading?: boolean;
 }
@@ -19,9 +21,7 @@ const Button: React.FC<ButtonProps> = ({
       className={clsx(
         'relative',
         {
-          'tw-button': variant === 'primary',
-          'bg-transparent hover:bg-gray-300 text-black font-semibold hover:text-white py-2 px-4 border border-gray-300 hover:border-transparent rounded':
-            variant === 'outline',
+          'px-4 py-2 text-lg text-white bg-[#4c4f65]': variant === 'primary',
           'w-full': fullWidth,
         },
         'flex items-center justify-center gap-2'
@@ -30,6 +30,11 @@ const Button: React.FC<ButtonProps> = ({
       {...props}
     >
       {children}
+      {loading && (
+        <div className='absolute right-4 flex items-center'>
+          <Loader size={22} borderSize={3} color='#fff' />
+        </div>
+      )}
     </button>
   );
 };

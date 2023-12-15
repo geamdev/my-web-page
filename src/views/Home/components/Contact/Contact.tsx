@@ -12,7 +12,7 @@ import Textarea from '@/shared/components/Textarea';
 
 const Contact: React.FC = () => {
   const {
-    watch,
+    // watch,
     register,
     formState: { errors },
   } = useForm<FormContact>({
@@ -20,7 +20,7 @@ const Contact: React.FC = () => {
     defaultValues,
   });
 
-  const [names, email, message] = watch(['names', 'email', 'message']);
+  // const [names, email, message] = watch(['names', 'email', 'message']);
   const { isMobile } = useResponsive();
   const { toggleMenuContact, toggleMenuContactAbout } = useContactAbout();
 

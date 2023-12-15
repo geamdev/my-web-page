@@ -150,11 +150,6 @@
   transform: translateY(-30px);
 }
 
-.form-control input:-webkit-autofill,
-.form-control input:-webkit-autofill {
-  box-shadow: 0 0 0px 1000px transparent inset;
-}
-
 @keyframes hover-v {
   0% {
     transform: scaleX(0);

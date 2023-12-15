@@ -1,4 +1,4 @@
-import { Graphql, MongoDB, Next, Node, ReactIcon } from '@/assets/Icons';
+import { MongoDB, Node, ReactIcon } from '@/assets/Icons';
 import Express from '@/assets/Icons/Express/Express';
 import { useContactAbout } from '@/shared/contexts/ContactAboutContext';
 import { useResponsive } from '@/shared/hooks';
@@ -92,10 +92,11 @@ const AboutMe: React.FC = () => {
           escribiendo código, me gusta jugar videojuegos, ver series, escuchar
           música y aprender cosas nuevas.
         </p>
+        <p className='mt-4'>Whit ❤️ Geam</p>
       </div>
       {isMobile && (
         <button
-          className='mt-8 bg-[#f3f3f3] dark:bg-[#1c1d25] dark:text-white text-black px-4 py-2 rounded-md font-bold'
+          className='mt-8 bg-[#f3f3f3] dark:bg-[#1c1d25] dark:text-white text-black px-4 py-2 rounded-md font-bold w-full'
           onClick={handleContact}
         >
           Contact me
