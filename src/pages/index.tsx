@@ -1,17 +1,31 @@
+import { useEffect, useState } from 'react';
+
 import { League_Spartan } from 'next/font/google';
 
 import { GetStaticProps } from 'next';
 import { MyHome } from '@/views';
+import { Loader } from '@/shared/components';
 
 const inter = League_Spartan({ subsets: ['latin'] });
+const Home = () => {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
-export default function Home() {
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+  }, []);
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
   return (
     <main className={`min-h-screen ${inter.className}`}>
       <MyHome />
     </main>
   );
-}
+};
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const locale = context.locale || 'en';
@@ -32,3 +46,5 @@ export const getStaticProps: GetStaticProps = async (context) => {
     };
   }
 };
+
+export default Home;

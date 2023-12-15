@@ -1,1 +1,11 @@
-{}
+{
+  "HEADER_DESCRIPTION": "I'm a ",
+  "HEADER_DESCRIPTION_JOB": "Frontend Developer",
+  "NAVBAR_HOME": "Home",
+  "ABOUT": "About Me",
+  "NAVBAR_SKILLS": "Skills",
+  "NAVBAR_PROJECTS": "Projects",
+  "NAVBAR_CONTACT": "Contact",
+  "SKILLS_TITLE": "Skills",
+  "SKILLS_DESCRIPTION": "I am a developer with major experience in technologies such as ReactJS, NextJS, React Native, GraphQL. I specialize in creating dynamic and scalable web applications. I have strong skills in designing user interfaces and implementing efficient solutions. I enjoy learning new technologies and facing challenges to improve my skills."
+}

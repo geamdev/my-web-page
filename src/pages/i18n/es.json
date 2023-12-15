@@ -1,1 +1,11 @@
-{}
+{
+  "HEADER_DESCRIPTION": "Soy ",
+  "HEADER_DESCRIPTION_JOB": "Desarrollador Frontend",
+  "NAVBAR_HOME": "Inicio",
+  "ABOUT": "Sobre mi",
+  "NAVBAR_SKILLS": "Habilidades",
+  "NAVBAR_PROJECTS": "Proyectos",
+  "NAVBAR_CONTACT": "Contacto",
+  "SKILLS_TITLE": "Habilidades",
+  "SKILLS_DESCRIPTION": "Soy un desarrollador con mayor experiencia en tecnologías como ReactJS, NextJS, React Native, GraphQL. Me especializo en la creación de aplicaciones web dinámicas y escalables. Tengo fuertes habilidades para diseñar interfaces de usuario e implementar soluciones eficientes. Disfruto aprendiendo nuevas tecnologías y enfrentando desafíos para mejorar mis habilidades."
+}
