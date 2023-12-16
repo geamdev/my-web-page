@@ -24,7 +24,7 @@ const Contact: React.FC = () => {
 
   const [names, email, message] = watch(['names', 'email', 'message']);
   const t = useTranslations();
-  const { enviarMensaje } = useContact();
+  const { enviarMensaje, loading } = useContact();
   const { isMobile } = useResponsive();
   const { toggleMenuContact, toggleMenuContactAbout } = useContactAbout();
 
@@ -37,7 +37,9 @@ const Contact: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const result = await enviarMensaje(data);
-    console.log(result);
+    if (result) {
+      toggleMenuContactAbout();
+    }
   };
   return (
     <section
@@ -98,7 +100,9 @@ const Contact: React.FC = () => {
             />
           </div>
 
-          <Button type='submit'>{t('SEND_MESSAGE')}</Button>
+          <Button type='submit' loading={loading}>
+            {t('SEND_MESSAGE')}
+          </Button>
         </form>
       </div>
     </section>

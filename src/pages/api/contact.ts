@@ -19,8 +19,16 @@ export default async function handler(req: any, res: any) {
       text: message,
     };
 
+    const responseMailOptions = {
+      from: 'jeanpiere.virgilio@gmail.com',
+      to: email,
+      subject: 'Mensaje recibido',
+      text: `Hola ${names}, gracias por contactarme. En breve te responderé.`,
+    };
+
     try {
       await transporter.sendMail(mailOptions);
+      await transporter.sendMail(responseMailOptions);
       res.status(200).json({ message: 'Mensaje enviado correctamente' });
     } catch (error) {
       console.error('Error al enviar el mensaje:', error);
