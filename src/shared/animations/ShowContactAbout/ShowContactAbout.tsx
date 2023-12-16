@@ -18,7 +18,7 @@ const ShowContactAbout: React.FC = () => {
 
   return (
     <LazyMotion features={domAnimation}>
-      <div className='absolute inset-0 z-[11] flex items-center justify-center h-screen tw-bg-primary dark:bg-[#1c1d25]'>
+      <div className='absolute inset-0 z-[11] flex  justify-center h-screen tw-bg-primary dark:bg-[#1c1d25]'>
         <div className='flex m-8 bg-transparent justify-center items-center'>
           <m.div
             initial='hidden'
