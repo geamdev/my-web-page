@@ -1,5 +1,6 @@
 import { RegisterOptions } from 'react-hook-form';
-import { LinkedIn, Github, Instagram, Medium, Twitter } from '@/assets/Icons';
+
+import { Github, Instagram, LinkedIn, Medium, Twitter } from '@/assets/Icons';
 
 const REQUIRED_TEXT = 'Este campo es requerido';
 

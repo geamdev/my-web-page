@@ -1,17 +1,16 @@
+import clsx from 'clsx';
+import { domAnimation, LazyMotion, m } from 'framer-motion';
 import Head from 'next/head';
+import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import React, { ReactNode, useEffect, useState } from 'react';
-import { LazyMotion, domAnimation, m } from 'framer-motion';
+import { IoMdClose } from 'react-icons/io';
 
 import { Footer, NavBar } from '@/shared/components';
+import { routerFooter } from '@/shared/constants/constants';
+import { useContactAbout } from '@/shared/contexts/ContactAboutContext';
 import { useResponsive } from '@/shared/hooks';
 import { AboutMe, Contact } from '@/views/Home/components';
-import { useContactAbout } from '@/shared/contexts/ContactAboutContext';
-import { routerFooter } from '@/shared/constants/constants';
-
-import { useTranslations } from 'next-intl';
-import Link from 'next/link';
-import clsx from 'clsx';
-import { IoMdClose } from 'react-icons/io';
 
 interface LayoutProps {
   title?: string;
@@ -251,7 +250,7 @@ const Layout: React.FC<LayoutProps> = ({
             {showNav && isMobile && (
               <div
                 className={clsx(
-                  'absolute inset-0 z-[11] flex w-full top-0 lef-0'
+                  'absolute inset-0 z-[11] flex w-full top-0 lef-0',
                 )}
               >
                 <m.div
@@ -264,7 +263,7 @@ const Layout: React.FC<LayoutProps> = ({
                   <div
                     className={clsx(
                       'flex px-20 items-center dark:bg-[#f3f3f3] bg-[#1c1d25] text-white dark:text-black',
-                      isMobile && 'bg-[#1c1d25] h-screen'
+                      isMobile && 'bg-[#1c1d25] h-screen',
                     )}
                   >
                     <button

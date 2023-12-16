@@ -1,11 +1,12 @@
-import { MongoDB, Node, ReactIcon } from '@/assets/Icons';
-import Express from '@/assets/Icons/Express/Express';
-import { useContactAbout } from '@/shared/contexts/ContactAboutContext';
-import { useResponsive } from '@/shared/hooks';
 import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
 import { useEffect } from 'react';
 import { FaAngleDoubleLeft } from 'react-icons/fa';
+
+import { MongoDB, Node, ReactIcon } from '@/assets/Icons';
+import Express from '@/assets/Icons/Express/Express';
+import { useContactAbout } from '@/shared/contexts/ContactAboutContext';
+import { useResponsive } from '@/shared/hooks';
 
 const AboutMe: React.FC = () => {
   const t = useTranslations();
@@ -49,9 +50,9 @@ const AboutMe: React.FC = () => {
   return (
     <section
       className={clsx(
-        'dark:bg-[#f3f3f3] py-20 px-8 w-full bg-[#1c1d25] text-white dark:text-black max-w-[585px] max-h-[655px] md:bg-[#fff] md:dark:bg-[#f3f3f3] md:text-black md:dark:text-black',
+        'dark:bg-[#f3f3f3] py-20 px-8 w-full bg-[#1c1d25] text-white dark:text-black max-w-[585px] md:max-h-[655px] md:bg-[#fff] md:dark:bg-[#f3f3f3] md:text-black md:dark:text-black',
         isMobile && 'h-screen relative',
-        !isMobile && 'lg:h-[calc(100vh-8rem)] md:h-[600px]'
+        !isMobile && 'lg:h-[calc(100vh-8rem)] md:h-[600px]',
       )}
     >
       {isMobile && (

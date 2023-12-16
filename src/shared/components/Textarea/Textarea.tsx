@@ -1,7 +1,8 @@
-import { useTheme } from '@/shared/contexts/DarkModeContext';
-import { useResponsive } from '@/shared/hooks';
 import clsx from 'clsx';
 import React, { forwardRef, TextareaHTMLAttributes } from 'react';
+
+import { useTheme } from '@/shared/contexts/DarkModeContext';
+import { useResponsive } from '@/shared/hooks';
 
 interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   error?: string;
@@ -45,7 +46,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
         <label>{spans}</label>
       </div>
     );
-  }
+  },
 );
 
 export default Textarea;

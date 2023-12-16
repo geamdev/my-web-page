@@ -1,12 +1,11 @@
+import clsx from 'clsx';
+import { domAnimation, LazyMotion, m } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 
-import { useResponsive } from '@/shared/hooks';
 import { Logo } from '@/assets';
-
-import clsx from 'clsx';
-import { useContactAbout } from '@/shared/contexts/ContactAboutContext';
-import { LazyMotion, domAnimation, m } from 'framer-motion';
 import { Button } from '@/shared/components';
+import { useContactAbout } from '@/shared/contexts/ContactAboutContext';
+import { useResponsive } from '@/shared/hooks';
 
 const Header = () => {
   const { isMobile, isTablet, isDesktop } = useResponsive();
@@ -85,7 +84,7 @@ const Header = () => {
                 'absolute  z-2',
                 isMobile && 'left-[-23px] top-[-50px]',
                 isDesktop && 'left-0 top-[-200px]',
-                isTablet && 'left-[-50px] top-[-200px]'
+                isTablet && 'left-[-50px] top-[-200px]',
               )}
             >
               <Logo

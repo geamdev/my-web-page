@@ -1,16 +1,18 @@
 import clsx from 'clsx';
+import { useTranslations } from 'next-intl';
 import { useForm } from 'react-hook-form';
-import { defaultValues } from '../../constants';
-import { FormContact } from '../../types';
-import { emailField, namesField } from '@/shared/constants/constants';
-import { Button, Input } from '@/shared/components';
 import { FaAngleDoubleRight } from 'react-icons/fa';
 import { IoMdClose } from 'react-icons/io';
-import { useResponsive } from '@/shared/hooks';
-import { useContactAbout } from '@/shared/contexts/ContactAboutContext';
+
+import { Button, Input } from '@/shared/components';
 import Textarea from '@/shared/components/Textarea';
-import { useTranslations } from 'next-intl';
+import { emailField, namesField } from '@/shared/constants/constants';
+import { useContactAbout } from '@/shared/contexts/ContactAboutContext';
+import { useResponsive } from '@/shared/hooks';
+
 import { useContact } from './hooks';
+import { defaultValues } from '../../constants';
+import { FormContact } from '../../types';
 
 const Contact: React.FC = () => {
   const {
@@ -38,15 +40,19 @@ const Contact: React.FC = () => {
     e.preventDefault();
     const result = await enviarMensaje(data);
     if (result) {
-      toggleMenuContactAbout();
+      if (isMobile) {
+        toggleMenuContact();
+      } else {
+        toggleMenuContactAbout();
+      }
     }
   };
   return (
     <section
       className={clsx(
-        'dark:bg-[#f3f3f3] py-20 px-8 w-full bg-[#1c1d25] text-white dark:text-black max-w-[585px] max-h-[655px] md:dark:bg-[#1c1d25] md:text-white md:dark:text-white',
+        'dark:bg-[#f3f3f3] py-20 px-8 w-full bg-[#1c1d25] text-white dark:text-black max-w-[585px] md:max-h-[655px] md:dark:bg-[#1c1d25] md:text-white md:dark:text-white',
         isMobile && 'h-screen relative',
-        !isMobile && 'h-[calc(100vh-8rem)]'
+        !isMobile && 'h-[calc(100vh-8rem)]',
       )}
     >
       {isMobile && (

@@ -1,5 +1,6 @@
 import { client } from '@/shared/config';
 import { loadAbort } from '@/shared/utilities';
+
 import { ContactFormData } from '../interfaces';
 
 export const contactFormData = (data: ContactFormData) => {

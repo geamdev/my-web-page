@@ -1,5 +1,6 @@
-import { useTheme } from '@/shared/contexts/DarkModeContext';
 import * as React from 'react';
+
+import { useTheme } from '@/shared/contexts/DarkModeContext';
 interface Props extends React.SVGProps<SVGSVGElement> {
   //props here
   width?: number;

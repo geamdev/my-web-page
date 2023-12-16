@@ -1,4 +1,4 @@
-import { LazyMotion, domAnimation, m, Variants } from 'framer-motion';
+import { domAnimation, LazyMotion, m, Variants } from 'framer-motion';
 
 const Loader: React.FC = () => {
   const backgroundSlide: Variants = {

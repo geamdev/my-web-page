@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { useState } from 'react';
 
-import { ContactFormData } from '@/shared/interfaces';
 import { useFetchAndLoad } from '@/shared/hooks';
+import { ContactFormData } from '@/shared/interfaces';
 import { contactFormData } from '@/shared/services';
 
 const useContactForm = () => {

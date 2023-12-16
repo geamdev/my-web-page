@@ -1,12 +1,13 @@
-import { useEffect } from 'react';
-import { FaSun, FaMoon } from 'react-icons/fa';
-import Link from 'next/link';
-import { useResponsive } from '@/shared/hooks';
-import { FaBarsStaggered } from 'react-icons/fa6';
-import { useTheme } from '@/shared/contexts/DarkModeContext';
-import { useTranslations } from 'next-intl';
-import { useContactAbout } from '@/shared/contexts/ContactAboutContext';
 import clsx from 'clsx';
+import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { useEffect } from 'react';
+import { FaMoon, FaSun } from 'react-icons/fa';
+import { FaBarsStaggered } from 'react-icons/fa6';
+
+import { useContactAbout } from '@/shared/contexts/ContactAboutContext';
+import { useTheme } from '@/shared/contexts/DarkModeContext';
+import { useResponsive } from '@/shared/hooks';
 
 const NavBar: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
@@ -60,7 +61,7 @@ const NavBar: React.FC = () => {
   return (
     <header
       className={clsx(
-        'lg:px-[150px] tw-bg-primary dark:bg-[#1c1d25] dark:text-white md:px-[50px]'
+        'lg:px-[150px] tw-bg-primary dark:bg-[#1c1d25] dark:text-white md:px-[50px]',
       )}
     >
       {isMobile ? (

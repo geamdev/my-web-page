@@ -1,12 +1,11 @@
+import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import { NextIntlClientProvider } from 'next-intl';
 
-import { ThemeProvider } from '@/shared/contexts/DarkModeContext';
-
-import type { AppProps } from 'next/app';
-
 import '../styles/globals.css';
+
 import { ContactAboutProvider } from '@/shared/contexts/ContactAboutContext';
+import { ThemeProvider } from '@/shared/contexts/DarkModeContext';
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();

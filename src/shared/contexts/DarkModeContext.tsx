@@ -1,4 +1,4 @@
-import { SetStateAction, createContext, useContext, useState } from 'react';
+import { createContext, SetStateAction, useContext, useState } from 'react';
 
 type ThemeContextType = {
   theme: 'light' | 'dark';
@@ -17,7 +17,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     typeof window !== 'undefined' &&
       window.matchMedia('(prefers-color-scheme: dark)').matches
       ? 'dark'
-      : 'light'
+      : 'light',
   );
 
   const toggleTheme = () => {

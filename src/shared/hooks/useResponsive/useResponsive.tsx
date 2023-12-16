@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect, useState } from 'react';
 
-import useDebounce from "../useDebounce";
+import useDebounce from '../useDebounce';
 
 const useResponsive = () => {
   const [state, setState] = useState({
@@ -32,11 +33,11 @@ const useResponsive = () => {
   });
 
   const Setup = () => {
-    window.addEventListener("resize", debouncedCall, false);
+    window.addEventListener('resize', debouncedCall, false);
   };
 
   const Cleanup = () => {
-    window.removeEventListener("resize", debouncedCall, false);
+    window.removeEventListener('resize', debouncedCall, false);
   };
 
   return state;

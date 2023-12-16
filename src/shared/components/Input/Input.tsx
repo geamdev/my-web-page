@@ -1,7 +1,8 @@
-import { useTheme } from '@/shared/contexts/DarkModeContext';
-import { useResponsive } from '@/shared/hooks';
 import clsx from 'clsx';
 import React, { forwardRef, InputHTMLAttributes } from 'react';
+
+import { useTheme } from '@/shared/contexts/DarkModeContext';
+import { useResponsive } from '@/shared/hooks';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   error?: string;
@@ -45,7 +46,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         <label>{spans}</label>
       </div>
     );
-  }
+  },
 );
 
 export default Input;

@@ -1,4 +1,5 @@
 import { Layout } from '@/shared/components';
+
 import { Header, Skills } from './components';
 
 const Home: React.FC = () => {

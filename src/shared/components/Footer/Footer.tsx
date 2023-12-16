@@ -1,9 +1,11 @@
-import logo from '../../../assets/Logo.svg';
+import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useResponsive } from '@/shared/hooks';
-import clsx from 'clsx';
+
 import { routerFooter } from '@/shared/constants/constants';
+import { useResponsive } from '@/shared/hooks';
+
+import logo from '../../../assets/Logo.svg';
 
 const Footer: React.FC = () => {
   const { isMobile } = useResponsive();

@@ -1,6 +1,7 @@
+import { useTranslations } from 'next-intl';
+
 import { SvgSkills } from '@/assets';
 import { useResponsive } from '@/shared/hooks';
-import { useTranslations } from 'next-intl';
 
 const Skills: React.FC = () => {
   const { isDesktop } = useResponsive();

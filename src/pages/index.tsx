@@ -1,10 +1,9 @@
+import { GetStaticProps } from 'next';
+import { League_Spartan } from 'next/font/google';
 import { useEffect, useState } from 'react';
 
-import { League_Spartan } from 'next/font/google';
-
-import { GetStaticProps } from 'next';
-import { MyHome } from '@/views';
 import { Loader } from '@/shared/components';
+import { MyHome } from '@/views';
 
 const inter = League_Spartan({ subsets: ['latin'] });
 const Home = () => {

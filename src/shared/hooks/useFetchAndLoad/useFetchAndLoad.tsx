@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { AxiosError, AxiosResponse } from 'axios';
+import { useEffect, useState } from 'react';
 
 import { AxiosCall } from '@/shared/interfaces';
 
@@ -8,7 +9,7 @@ const useFetchAndLoad = () => {
   let controller: AbortController;
 
   const callEndpoint = async (
-    axiosCall: AxiosCall<any>
+    axiosCall: AxiosCall<unknown>,
   ): Promise<AxiosError | any> => {
     if (axiosCall.controller) controller = axiosCall.controller;
     setLoading(true);
@@ -33,6 +34,7 @@ const useFetchAndLoad = () => {
     return () => {
       cancelEndpoint();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return { loading, callEndpoint };
