@@ -3,10 +3,12 @@ import Express from '@/assets/Icons/Express/Express';
 import { useContactAbout } from '@/shared/contexts/ContactAboutContext';
 import { useResponsive } from '@/shared/hooks';
 import clsx from 'clsx';
+import { useTranslations } from 'next-intl';
 import { useEffect } from 'react';
 import { FaAngleDoubleLeft } from 'react-icons/fa';
 
 const AboutMe: React.FC = () => {
+  const t = useTranslations();
   const { isMobile } = useResponsive();
   const { isMenuOpenAbout, toggleMenuAbout, toggleMenuContact } =
     useContactAbout();
@@ -47,7 +49,7 @@ const AboutMe: React.FC = () => {
   return (
     <section
       className={clsx(
-        'dark:bg-[#f3f3f3] py-20 px-8 w-full bg-[#1c1d25] text-white dark:text-black max-w-[585px] md:bg-[#fff] md:dark:bg-[#f3f3f3] md:text-black md:dark:text-black',
+        'dark:bg-[#f3f3f3] py-20 px-8 w-full bg-[#1c1d25] text-white dark:text-black max-w-[585px] max-h-[655px] md:bg-[#fff] md:dark:bg-[#f3f3f3] md:text-black md:dark:text-black',
         isMobile && 'h-screen relative',
         !isMobile && 'lg:h-[calc(100vh-8rem)] md:h-[600px]'
       )}
@@ -71,8 +73,10 @@ const AboutMe: React.FC = () => {
         )}
         <div className='flex justify-between'>
           <div>
-            <h2 className='text-4xl font-bold'>About Me.</h2>
-            <h3 className='mb-4'>Front-end developer.</h3>
+            <h2 className='text-4xl font-bold'>{t('ABOUT_TITLE')}</h2>
+            <h3 className='mb-4'>
+              <i>{t('HEADER_DESCRIPTION_JOB')}</i>
+            </h3>
           </div>
           {!isMobile && (
             <div className='flex gap-2 mt-2'>
@@ -83,23 +87,17 @@ const AboutMe: React.FC = () => {
             </div>
           )}
         </div>
-        <p className='text-justify '>
-          Soy Geampiere Jaramillo, un desarrollador Full-Stack de 19 años. Soy
-          un tipo raro al que le gusta hacer cosas raras con tecnologías web. Me
-          gusta resolver problemas de diseño, crear interfaces de usuario
-          inteligentes e imaginar interacciones útiles, desarrollando ricas
-          experiencias y aplicaciones web. Cuando no estoy trabajando o
-          escribiendo código, me gusta jugar videojuegos, ver series, escuchar
-          música y aprender cosas nuevas.
+        <p className='text-justify '>{t('ABOUT_DESCRIPTION')}</p>
+        <p className='mt-4'>
+          <i>{t('ABOUT_HEART')}</i>
         </p>
-        <p className='mt-4'>Whit ❤️ Geam</p>
       </div>
       {isMobile && (
         <button
           className='mt-8 bg-[#f3f3f3] dark:bg-[#1c1d25] dark:text-white text-black px-4 py-2 rounded-md font-bold w-full'
           onClick={handleContact}
         >
-          Contact me
+          {t('ABOUT_CONTACT')}
         </button>
       )}
     </section>

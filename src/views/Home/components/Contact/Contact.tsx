@@ -5,14 +5,16 @@ import { FormContact } from '../../types';
 import { emailField, namesField } from '@/shared/constants/constants';
 import { Button, Input } from '@/shared/components';
 import { FaAngleDoubleRight } from 'react-icons/fa';
-import { RiFullscreenExitLine } from 'react-icons/ri';
+import { IoMdClose } from 'react-icons/io';
 import { useResponsive } from '@/shared/hooks';
 import { useContactAbout } from '@/shared/contexts/ContactAboutContext';
 import Textarea from '@/shared/components/Textarea';
+import { useTranslations } from 'next-intl';
+import { useContact } from './hooks';
 
 const Contact: React.FC = () => {
   const {
-    // watch,
+    watch,
     register,
     formState: { errors },
   } = useForm<FormContact>({
@@ -20,17 +22,27 @@ const Contact: React.FC = () => {
     defaultValues,
   });
 
-  // const [names, email, message] = watch(['names', 'email', 'message']);
+  const [names, email, message] = watch(['names', 'email', 'message']);
+  const t = useTranslations();
+  const { enviarMensaje } = useContact();
   const { isMobile } = useResponsive();
   const { toggleMenuContact, toggleMenuContactAbout } = useContactAbout();
 
+  const data = {
+    names,
+    email,
+    message,
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const result = await enviarMensaje(data);
+    console.log(result);
   };
   return (
     <section
       className={clsx(
-        'dark:bg-[#f3f3f3] py-20 px-8 w-full bg-[#1c1d25] text-white dark:text-black max-w-[585px] md:dark:bg-[#1c1d25] md:text-white md:dark:text-white',
+        'dark:bg-[#f3f3f3] py-20 px-8 w-full bg-[#1c1d25] text-white dark:text-black max-w-[585px] max-h-[655px] md:dark:bg-[#1c1d25] md:text-white md:dark:text-white',
         isMobile && 'h-screen relative',
         !isMobile && 'h-[calc(100vh-8rem)]'
       )}
@@ -48,14 +60,12 @@ const Contact: React.FC = () => {
           className='absolute top-4 right-4 text-3xl font-bold text-white'
           onClick={toggleMenuContactAbout}
         >
-          <RiFullscreenExitLine />
+          <IoMdClose />
         </button>
       )}
       <div className='w-full'>
-        <h2 className='text-4xl font-bold'>Let's talk.</h2>
-        <p className='mb-4'>
-          New projects, freelance inquiry or even a coffee.
-        </p>
+        <h2 className='text-4xl font-bold'>{t('LETS_TALK')}.</h2>
+        <p className='mb-4'>{t('INQUIRY')}</p>
         <form onSubmit={handleSubmit} className='mt-10'>
           <div>
             <Input
@@ -64,14 +74,14 @@ const Contact: React.FC = () => {
               id='names'
               type='text'
               error={errors.names?.message}
-              label='Names'
+              label={t('NAMES')}
               {...register('names', namesField)}
             />
           </div>
           <div>
             <Input
               required
-              label='Email'
+              label={t('EMAIL')}
               id='email'
               type='text'
               error={errors.email?.message}
@@ -80,7 +90,7 @@ const Contact: React.FC = () => {
           </div>
           <div className='mb-4'>
             <Textarea
-              label='Message'
+              label={t('MESSAGE')}
               required
               id='message'
               error={errors.message?.message}
@@ -88,7 +98,7 @@ const Contact: React.FC = () => {
             />
           </div>
 
-          <Button type='submit'>Send Message</Button>
+          <Button type='submit'>{t('SEND_MESSAGE')}</Button>
         </form>
       </div>
     </section>

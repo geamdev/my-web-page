@@ -11,7 +11,7 @@ import { routerFooter } from '@/shared/constants/constants';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import clsx from 'clsx';
-import { RiFullscreenExitLine } from 'react-icons/ri';
+import { IoMdClose } from 'react-icons/io';
 
 interface LayoutProps {
   title?: string;
@@ -225,7 +225,7 @@ const Layout: React.FC<LayoutProps> = ({
 
             {showContactAbout && !isMobile && (
               <div className='absolute inset-0 z-[11] flex items-center justify-center h-screen tw-bg-primary dark:bg-[#1c1d25]'>
-                <div className='flex m-8 bg-transparent'>
+                <div className='flex m-8 bg-transparent justify-center items-center'>
                   <m.div
                     initial='hidden'
                     animate={isMenuOpenContactAbout ? 'visible' : 'hidden'}
@@ -271,7 +271,7 @@ const Layout: React.FC<LayoutProps> = ({
                       className='absolute top-4 right-4 text-3xl font-bold text-dark'
                       onClick={toggleMenuNav}
                     >
-                      <RiFullscreenExitLine />
+                      <IoMdClose />
                     </button>
                     <div className='absolute bottom-8 text-3xl font-bold text-dark flex gap-4'>
                       {routerFooter.map((item, index) => (
