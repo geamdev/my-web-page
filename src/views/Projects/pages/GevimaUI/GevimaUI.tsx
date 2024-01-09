@@ -53,12 +53,20 @@ const GevimaUI: React.FC = () => {
           </div>
 
           <div className='flex mt-6 md:mt-10 gap-2 justify-center flex-col md:flex-row'>
-            <button className='mr-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 flex justify-center px-4 py-2 rounded-md gap-2'>
+            <Link
+              className='mr-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 flex justify-center px-4 py-2 rounded-md gap-2'
+              href='https://github.com/geamdev/gevima-ui'
+              target='_blank'
+            >
               {t('VISIT_REPOSITORY')} <FaGithub className='text-xl' />
-            </button>
-            <button className='bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 flex justify-center px-4 py-2 rounded-md gap-2'>
+            </Link>
+            <Link
+              className='bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 flex justify-center px-4 py-2 rounded-md gap-2'
+              href='https://gevima-ui.vercel.app/'
+              target='_blank'
+            >
               {t('VISIT_DEMO')} <TfiWorld className='text-xl' />
-            </button>
+            </Link>
           </div>
         </div>
       </div>
