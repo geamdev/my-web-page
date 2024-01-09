@@ -71,7 +71,9 @@ const Layout: React.FC<LayoutProps> = ({
           <div className='relative w-full h-full overflow-y-auto '>
             {isMobile && <ShowContactAboutMobile />}
             {showContactAbout && !isMobile && <ShowContactAbout />}
-            {showNav && isMobile && <ShowNavAnimation />}
+            {showNav && isMobile && (
+              <ShowNavAnimation project={project ? project : false} />
+            )}
 
             <NavBar project={project ? project : false} />
             {children}

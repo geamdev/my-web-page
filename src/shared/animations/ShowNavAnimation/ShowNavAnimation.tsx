@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { domAnimation, LazyMotion, m } from 'framer-motion';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useTranslations } from 'next-intl';
 import { IoMdClose } from 'react-icons/io';
 
@@ -8,9 +9,22 @@ import { routerFooter } from '@/shared/constants';
 import { useContactAbout } from '@/shared/contexts/ContactAboutContext';
 import { useResponsive } from '@/shared/hooks';
 
-const ShowNavAnimation: React.FC = () => {
+interface ShowNavAnimationProps {
+  project?: boolean;
+  casa?: boolean;
+}
+
+const ShowNavAnimation: React.FC<ShowNavAnimationProps> = ({
+  project,
+  casa = true,
+}) => {
   const t = useTranslations();
   const { isMobile } = useResponsive();
+  const router = useRouter();
+
+  const goHome = () => {
+    router.push('/');
+  };
 
   const {
     isMenuOpenNav,
@@ -27,8 +41,9 @@ const ShowNavAnimation: React.FC = () => {
   const routesLinks = [
     {
       title: home,
-      href: '#',
-      section: true,
+      href: '/',
+      click: true,
+      onClick: goHome,
     },
     {
       title: skills,
@@ -44,7 +59,23 @@ const ShowNavAnimation: React.FC = () => {
       title: contact,
       href: '#',
       click: true,
-      onCLick: isMobile ? toggleMenuContact : toggleMenuContactAbout,
+      onClick: isMobile ? toggleMenuContact : toggleMenuContactAbout,
+    },
+  ];
+
+  const routesLinksProject = [
+    {
+      title: home,
+      href: '/',
+      click: true,
+      section: false,
+      onClick: goHome,
+    },
+    {
+      title: contact,
+      href: '#',
+      click: true,
+      onClick: isMobile ? toggleMenuContact : toggleMenuContactAbout,
     },
   ];
 
@@ -109,21 +140,40 @@ const ShowNavAnimation: React.FC = () => {
             </div>
 
             <ul className='flex flex-col list-none gap-8'>
-              {routesLinks.map((link, index) => (
-                <li className='flex' key={index}>
-                  <Link
-                    href={link.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      link.section && closeNavAndNavigate(link.href);
-                      link.click && closeNavAndNavigateClick(link.onCLick);
-                    }}
-                    className='text-3xl font-bold'
-                  >
-                    {link.title}
-                  </Link>
-                </li>
-              ))}
+              {casa &&
+                !project &&
+                routesLinks.map((link, index) => (
+                  <li className='flex' key={index}>
+                    <Link
+                      href={link.href}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        link.section && closeNavAndNavigate(link.href);
+                        link.click && closeNavAndNavigateClick(link.onClick);
+                      }}
+                      className='text-3xl font-bold'
+                    >
+                      {link.title}
+                    </Link>
+                  </li>
+                ))}
+
+              {project &&
+                routesLinksProject.map((link, index) => (
+                  <li className='flex' key={index}>
+                    <Link
+                      href={link.href}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        link.section && closeNavAndNavigate(link.href);
+                        link.click && closeNavAndNavigateClick(link.onClick);
+                      }}
+                      className='text-3xl font-bold'
+                    >
+                      {link.title}
+                    </Link>
+                  </li>
+                ))}
             </ul>
           </div>
         </m.div>
