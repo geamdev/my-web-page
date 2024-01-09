@@ -9,7 +9,12 @@ import { useContactAbout } from '@/shared/contexts/ContactAboutContext';
 import { useTheme } from '@/shared/contexts/DarkModeContext';
 import { useResponsive } from '@/shared/hooks';
 
-const NavBar: React.FC = () => {
+interface NavBarProps {
+  project?: boolean;
+  casa?: boolean;
+}
+
+const NavBar: React.FC<NavBarProps> = ({ project, casa = true }) => {
   const { theme, toggleTheme } = useTheme();
   const { toggleMenuNav, toggleMenuContactAbout } = useContactAbout();
 
@@ -33,6 +38,18 @@ const NavBar: React.FC = () => {
     {
       title: projects,
       href: '#projects',
+    },
+    {
+      title: contact,
+      href: '#',
+      onClick: () => toggleMenuContactAbout(),
+    },
+  ];
+
+  const routesLinksProject = [
+    {
+      title: home,
+      href: '/',
     },
     {
       title: contact,
@@ -86,11 +103,19 @@ const NavBar: React.FC = () => {
           </ul>
           <ul className='flex justify-center items-center list-none gap-8'>
             <li className='flex gap-4 li '>
-              {routesLinks.map((link, index) => (
-                <Link href={link.href} key={index} onClick={link.onClick}>
-                  {link.title}
-                </Link>
-              ))}
+              {casa &&
+                !project &&
+                routesLinks.map((link, index) => (
+                  <Link href={link.href} key={index} onClick={link.onClick}>
+                    {link.title}
+                  </Link>
+                ))}
+              {project &&
+                routesLinksProject.map((link, index) => (
+                  <Link href={link.href} key={index} onClick={link.onClick}>
+                    {link.title}
+                  </Link>
+                ))}
             </li>
           </ul>
         </nav>

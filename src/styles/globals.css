@@ -149,6 +149,37 @@
 .form-control textarea:valid + label span {
   transform: translateY(-30px);
 }
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.typing {
+  overflow: hidden;
+  white-space: nowrap;
+  animation:
+    typing 5s steps(40, end) infinite,
+    blink 5s step-end infinite;
+}
+
+@media (max-width: 768px) {
+  .typing {
+    font-size: 15px;
+    animation:
+      typing 5s steps(40, end) infinite,
+      blink 1s step-end infinite;
+  }
+}
 
 @keyframes hover-v {
   0% {
@@ -186,4 +217,24 @@
     height: 5px;
     opacity: 0.02;
   }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  transition: background-color 5000s ease-in-out 0s;
+  color: #fff;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #fff !important;
 }

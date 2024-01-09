@@ -1,0 +1,20 @@
+{
+  "HEADER_DESCRIPTION_JOB": "Desarrollador Full-Stack",
+  "NAVBAR_HOME": "Inicio",
+  "ABOUT": "Sobre mi",
+  "NAVBAR_SKILLS": "Habilidades",
+  "NAVBAR_PROJECTS": "Proyectos",
+  "NAVBAR_CONTACT": "Contacto",
+  "SKILLS_TITLE": "Habilidades",
+
+  "ABOUT_TITLE": "Sobre mi.",
+  "ABOUT_DESCRIPTION": "Soy Geampiere Jaramillo, un desarrollador Full-Stack de 19 años. Soy un tipo raro al que le gusta hacer cosas raras con tecnologías web. Me gusta resolver problemas de diseño, crear interfaces de usuario inteligentes e imaginar interacciones útiles, desarrollando ricas experiencias y aplicaciones web. Cuando no estoy trabajando o escribiendo código, me gusta jugar videojuegos, ver series, escuchar música y aprender cosas nuevas.",
+  "ABOUT_HEART": "Con ❤️ Geam",
+
+  "LETS_TALK": "Hablemos",
+  "INQUIRY": "Nuevos proyectos, consultas freelance o incluso un café.",
+  "NAMES": "Nombres",
+  "EMAIL": "Correo electrónico",
+  "MESSAGE": "Mensaje",
+  "SEND_MESSAGE": "Enviar mensaje"
+}

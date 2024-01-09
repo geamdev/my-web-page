@@ -13,6 +13,8 @@ interface LayoutProps {
   head?: ReactNode;
   children: ReactNode;
   description?: string;
+  project?: boolean;
+  casa?: boolean;
 }
 
 const Layout: React.FC<LayoutProps> = ({
@@ -20,6 +22,7 @@ const Layout: React.FC<LayoutProps> = ({
   head,
   title,
   description,
+  project,
 }) => {
   const [showNav, setShowNav] = useState<boolean>(false);
   const [showContactAbout, setShowContactAbout] = useState<boolean>(false);
@@ -70,7 +73,7 @@ const Layout: React.FC<LayoutProps> = ({
             {showContactAbout && !isMobile && <ShowContactAbout />}
             {showNav && isMobile && <ShowNavAnimation />}
 
-            <NavBar />
+            <NavBar project={project ? project : false} />
             {children}
             <Footer />
           </div>

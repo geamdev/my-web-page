@@ -1,6 +1,6 @@
 import { Layout } from '@/shared/components';
 
-import { Header, Skills } from './components';
+import { Header, Projects, Skills } from './components';
 
 const Home: React.FC = () => {
   return (
@@ -27,6 +27,7 @@ const Home: React.FC = () => {
     >
       <Header />
       <Skills />
+      <Projects />
     </Layout>
   );
 };
