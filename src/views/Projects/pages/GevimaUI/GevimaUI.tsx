@@ -1,12 +1,14 @@
 import gevimaUi from 'assets/GevimaUI.png';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { FaArrowLeft, FaGithub } from 'react-icons/fa';
 import { TfiWorld } from 'react-icons/tfi';
 
 import { Layout } from '@/shared/components';
 
 const GevimaUI: React.FC = () => {
+  const t = useTranslations();
   return (
     <Layout
       project
@@ -38,30 +40,24 @@ const GevimaUI: React.FC = () => {
               className='flex gap-2 text-[#213B6D] dark:text-[#748FBD]'
             >
               <FaArrowLeft className='text-xl' />
-              Volver
+              {t('BACK')}
             </Link>
           </div>
           <p className='text-xl lg:text-xl dark:tw-text-secondary-dark min-w-[300px] max-w-[900px] mb-4'>
-            GevimaUI es una biblioteca de componentes ReactJS de alta calidad y
-            moderna, completamente escrita en TypeScript. Ofrece un conjunto de
-            componentes intuitivos y estilizados, con herramientas de diseño
-            integradas que facilitan el desarrollo. Es fácil de instalar y usar,
-            promoviendo la eficiencia y la elegancia en el desarrollo de
-            interfaces de usuario. Además, invita a la comunidad a contribuir y
-            mejorar constantemente su conjunto de herramientas y documentación.
+            {t('DESCRIPTION_GEVIMAUI')}
           </p>
           <Image src={gevimaUi} alt='Gevima UI' width={900} height={900} />
           <div className='flex mt-4 flex-col md:flex-row'>
-            <h3 className='text-xl font-bold mr-2'>Tecnologias Usadas: </h3>
-            <p className='text-xl'>ReactJS, TypeScript</p>
+            <h3 className='text-xl font-bold mr-2'>{t('TECHNOLOGIES_USED')}</h3>
+            <p className='text-xl'>{t('TECHNOLOGIES_USED_DESCRIPTION')}</p>
           </div>
 
           <div className='flex mt-6 md:mt-10 gap-2 justify-center flex-col md:flex-row'>
             <button className='mr-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 flex justify-center px-4 py-2 rounded-md gap-2'>
-              Visitar Repositorio <FaGithub className='text-xl' />
+              {t('VISIT_REPOSITORY')} <FaGithub className='text-xl' />
             </button>
             <button className='bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 flex justify-center px-4 py-2 rounded-md gap-2'>
-              Visitar Demo <TfiWorld className='text-xl' />
+              {t('VISIT_DEMO')} <TfiWorld className='text-xl' />
             </button>
           </div>
         </div>

@@ -19,5 +19,11 @@
   "NAMES": "Names",
   "EMAIL": "E-mail",
   "MESSAGE": "Message",
-  "SEND_MESSAGE": "Send message"
+  "SEND_MESSAGE": "Send message",
+
+  "LATEST_WORKS": "Latest Works",
+  "NAME_LIBRERY": "GevimaUI",
+  "DESCRIPTION_LIBRERY": "A modern library for reactJS components",
+  "SEE_MORE": "See more",
+  "ALL_PROJECTS": "All projects"
 }

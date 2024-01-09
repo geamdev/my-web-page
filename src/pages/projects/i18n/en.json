@@ -16,5 +16,18 @@
   "NAMES": "Names",
   "EMAIL": "E-mail",
   "MESSAGE": "Message",
-  "SEND_MESSAGE": "Send message"
+  "SEND_MESSAGE": "Send message",
+
+  "DESCRIPTION_GEVIMAUI": "GevimaUI is a high-quality, modern ReactJS component library, completely written in TypeScript. It offers an intuitive and stylish set of components, with integrated design tools that facilitate development. It is easy to install and use, promoting efficiency and elegance in user interface development. It also invites the community to contribute and constantly improve its toolset and documentation.",
+  "BACK": "Back",
+  "TECHNOLOGIES_USED": "Technologies used",
+  "TECHNOLOGIES_USED_DESCRIPTION": "ReactJS, TypeScript",
+  "VISIT_REPOSITORY": "Visit repository",
+  "VISIT_DEMO": "Visit demo",
+
+  "LATEST_WORKS": "Latest Works",
+  "NAME_LIBRERY": "GevimaUI",
+  "DESCRIPTION_LIBRERY": "A modern library for reactJS components",
+  "SEE_MORE": "See more",
+  "WORKING_ON": "Working on something exciting... wait for it!"
 }

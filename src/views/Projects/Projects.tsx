@@ -2,6 +2,7 @@ import GevimaUi from 'assets/GevimaUI.png';
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { useTranslations } from 'next-intl';
 import React, { useState } from 'react';
 
 import { Button, Layout } from '@/shared/components';
@@ -9,6 +10,7 @@ import { Button, Layout } from '@/shared/components';
 const Projects = () => {
   const [hovered, setHovered] = useState(false);
   const router = useRouter();
+  const t = useTranslations();
 
   const goToGevimaUi = () => {
     router.push('/projects/gevima-ui');
@@ -59,7 +61,7 @@ const Projects = () => {
         id='projects'
       >
         <h1 className='text-4xl font-bold text-[#4a4a4a] mb-8 dark:text-white'>
-          Latest Works
+          {t('LATEST_WORKS')}
         </h1>
         <div
           className='relative max-w-[900px] max-h-[460px] overflow-hidden cursor-pointer'
@@ -84,10 +86,12 @@ const Projects = () => {
             >
               01
             </motion.span>
-            <h4 className='text-4xl md:text-7xl font-bold'>GevimaUI</h4>
-            <p>A modern library for reactJS components</p>
+            <h4 className='text-4xl md:text-7xl font-bold'>
+              {t('NAME_LIBRERY')}
+            </h4>
+            <p>{t('DESCRIPTION_LIBRERY')}</p>
             <Button className='relative px-4 py-2 text-lg text-white bg-[#4c4f65] z-10'>
-              See more
+              {t('SEE_MORE')}
             </Button>
           </motion.div>
         </div>
@@ -100,7 +104,7 @@ const Projects = () => {
             animate='animate'
             exit='exit'
           >
-            Trabajando en algo emocionante... ¡espéralo!
+            {t('WORKING_ON')}
           </motion.div>
         </AnimatePresence>
       </section>

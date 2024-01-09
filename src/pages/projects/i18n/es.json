@@ -16,5 +16,18 @@
   "NAMES": "Nombres",
   "EMAIL": "Correo electrónico",
   "MESSAGE": "Mensaje",
-  "SEND_MESSAGE": "Enviar mensaje"
+  "SEND_MESSAGE": "Enviar mensaje",
+
+  "DESCRIPTION_GEVIMAUI": "GevimaUI es una biblioteca de componentes ReactJS de alta calidad y moderna, completamente escrita en TypeScript. Ofrece un conjunto de componentes intuitivos y estilizados, con herramientas de diseño integradas que facilitan el desarrollo. Es fácil de instalar y usar, promoviendo la eficiencia y la elegancia en el desarrollo de interfaces de usuario. Además, invita a la comunidad a contribuir y mejorar constantemente su conjunto de herramientas y documentación.",
+  "BACK": "Volver",
+  "TECHNOLOGIES_USED": "Tecnologías usadas",
+  "TECHNOLOGIES_USED_DESCRIPTION": "ReactJS, TypeScript",
+  "VISIT_REPOSITORY": "Visitar repositorio",
+  "VISIT_DEMO": "Visitar demo",
+
+  "LATEST_WORKS": "Últimos trabajos",
+  "NAME_LIBRERY": "GevimaUI",
+  "DESCRIPTION_LIBRERY": "Una biblioteca moderna para componentes de ReactJS",
+  "SEE_MORE": "Ver más",
+  "WORKING_ON": "Trabajando en algo emocionante... ¡espéralo!"
 }
