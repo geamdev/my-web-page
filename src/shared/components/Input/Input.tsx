@@ -28,10 +28,14 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
 
     return (
       <div
-        className={clsx('form-control', {
-          'w-full': fullWidth,
-          'text-dark': isMobile && theme === 'dark',
-        })}
+        className={clsx(
+          'form-control',
+          {
+            'w-full': fullWidth,
+            'text-dark': isMobile && theme === 'dark',
+          },
+          error && 'label-up',
+        )}
       >
         <input
           ref={ref}

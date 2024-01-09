@@ -149,6 +149,10 @@
 .form-control textarea:valid + label span {
   transform: translateY(-30px);
 }
+
+.label-up span {
+  transform: translateY(-30px);
+}
 @keyframes typing {
   from {
     width: 0;
