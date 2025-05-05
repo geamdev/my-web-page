@@ -6,7 +6,6 @@ import { IoMdClose } from 'react-icons/io';
 
 import { Button, Input } from '@/shared/components';
 import Textarea from '@/shared/components/Textarea';
-import { emailField, namesField } from '@/shared/constants/constants';
 import { useContactAbout } from '@/shared/contexts/ContactAboutContext';
 import { useResponsive } from '@/shared/hooks';
 
@@ -83,7 +82,9 @@ const Contact: React.FC = () => {
               type='text'
               error={errors.names?.message}
               label={t('NAMES')}
-              {...register('names', namesField)}
+              {...register('names', {
+                required: 'Este campo es requerido',
+              })}
             />
           </div>
           <div>
@@ -93,7 +94,9 @@ const Contact: React.FC = () => {
               id='email'
               type='text'
               error={errors.email?.message}
-              {...register('email', emailField)}
+              {...register('email', {
+                required: 'Este campo es requerido',
+              })}
             />
           </div>
           <div className='mb-4'>
