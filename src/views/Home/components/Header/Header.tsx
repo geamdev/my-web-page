@@ -64,7 +64,7 @@ const Header = () => {
             </div>
 
             <Button
-              className='relative px-4 py-2 text-lg text-white bg-[#4c4f65] z-10'
+              className='relative px-4 py-2 text-lg text-white bg-[#4c4f65] z-10 hover:bg-[#56596C] hover:text-white transition-all duration-300'
               onClick={onMenuClick}
             >
               {t('ABOUT')}
